@@ -1,0 +1,25 @@
+application: flocationstestblog
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+env_variables:
+  DJANGO_SETTINGS_MODULE: 'blogengine.settings'
+
+builtins:
+- django_wsgi: on
+
+libraries:
+- name: django
+  version: "1.5"
+
+- name: MySQLdb
+  version: "latest"
+
+handlers:
+- url: /static/
+  static_dir: static_root
+
+- url: /.*
+  script: blogengine.wsgi.application

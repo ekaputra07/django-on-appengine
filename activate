@@ -1,0 +1,9 @@
+# change google_appengine path to your appengine folder.
+
+export GAE=/home/eka/Projects/appengine/google_appengine
+export PYTHONPATH=$PYTHONPATH:$GAE:$GAE/lib/django-1.5
+
+DJANGO_BIN=$GAE/lib/django-1.5/django/bin/
+export PATH=${PATH}:$GAE:$DJANGO_BIN
+
+chmod +x $DJANGO_BIN*.py

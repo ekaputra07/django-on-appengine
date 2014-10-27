@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+{% load markdown_tags %}
+
+{% block content %}
+	{% for post in posts %}
+	<h2><a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+	<p>{{ post.content|markdownize|safe|truncatewords_html:50 }}</p>
+	<br />
+	{% endfor %}
+{% endblock %}

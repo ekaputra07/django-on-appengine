@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+{% load markdown_tags %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<h2>{{ post.title }}</h2>
+<p>{{ post.content|markdownize|safe }}</p>
+{% endblock %}
