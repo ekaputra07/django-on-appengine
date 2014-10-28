@@ -1,2 +1,3 @@
 *.pyc
 blogengine/settings.py
+static_root/
